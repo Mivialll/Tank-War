@@ -104,11 +104,9 @@ public class CameraControl : MonoBehaviour
             // Choose the largest out of the current size and the calculated size based on the tank being to the left or right of the camera.
             size = Mathf.Max(size, Mathf.Abs(desiredPosToTarget.x) / m_Camera.aspect);
         }
-
-        // Add the edge buffer to the size.
+        
         size += m_ScreenEdgeBuffer;
 
-        // Make sure the camera's size isn't below the minimum.
         size = Mathf.Max (size, m_MinSize);
 
         return size;
