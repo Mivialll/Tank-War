@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEnginerController;
 
 public class CameraControl : MonoBehaviour
 {
@@ -14,14 +15,12 @@ public class CameraControl : MonoBehaviour
     private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
 
 
-    private void Awake ()
-    {
+    private void Awake (){
         m_Camera = GetComponentInChildren<Camera> ();
     }
 
 
-    private void FixedUpdate ()
-    {
+    private void FixedUpdate (){
         // Move the camera towards a desired position.
         Move ();
 
@@ -30,8 +29,7 @@ public class CameraControl : MonoBehaviour
     }
 
 
-    private void Move ()
-    {
+    private void Move (){
         // Find the average position of the targets.
         FindAveragePosition ();
 
