@@ -33,12 +33,11 @@ public class TankMovement : MonoBehaviour
         m_TurnInputValue = 0f;
     }
 
- private void OnDisable ()
+    private void OnDisable ()
     {
         // When the tank is turned off, set it to kinematic so it stops moving.
         m_Rigidbody.isKinematic = true;
     }
-
 
     private void Start ()
     {
@@ -50,7 +49,6 @@ public class TankMovement : MonoBehaviour
         m_OriginalPitch = m_MovementAudio.pitch;
     }
 
-
     private void Update ()
     {
         // Store the value of both input axes.
@@ -59,7 +57,6 @@ public class TankMovement : MonoBehaviour
 
         EngineAudio ();
     }
-
 
     private void EngineAudio ()
     {
@@ -95,7 +92,6 @@ public class TankMovement : MonoBehaviour
         Turn ();
     }
 
-
     private void Move ()
     {
         // Create a vector in the direction the tank is facing with a magnitude based on the input, speed and the time between frames.
@@ -104,7 +100,6 @@ public class TankMovement : MonoBehaviour
         // Apply this movement to the rigidbody's position.
         m_Rigidbody.MovePosition(m_Rigidbody.position + movement);
     }
-
 
     private void Turn ()
     {
@@ -118,19 +113,3 @@ public class TankMovement : MonoBehaviour
         m_Rigidbody.MoveRotation (m_Rigidbody.rotation * turnRotation);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
