@@ -17,7 +17,6 @@ public class ShellExplosion : MonoBehaviour
                 Destroy (gameObject, m_MaxLifeTime);
             }
 
-
             private void OnTriggerEnter (Collider other)
             {
                 // Collect all the colliders in a sphere from the shell's current position to a radius of the explosion radius.
@@ -65,7 +64,6 @@ public class ShellExplosion : MonoBehaviour
                 // Destroy the shell.
                 Destroy (gameObject);
             }
-
 
             private float CalculateDamage (Vector3 targetPosition)
             {
