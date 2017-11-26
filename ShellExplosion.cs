@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ShellExplosion : MonoBehaviour
+public class ShellExplosion: MonoBehaviour
 {
     public LayerMask m_TankMask;                        // Used to filter what the explosion affects, this should be set to "Players".
     public ParticleSystem m_ExplosionParticles;         // Reference to the particles that will play on explosion.
@@ -82,7 +82,7 @@ public class ShellExplosion : MonoBehaviour
         float damage = relativeDistance * m_MaxDamage;
 
         // Make sure that the minimum damage is always 0.
-        damage = Mathf.Max (0f, damage);
+        damage = Mathf.Max(0f, damage);
 
         return damage;
     }
