@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEnginerController;
 
-public class CameraControl : MonoBehaviour
+public class CameraControl: MonoBehaviour
 {
     public float m_DampTime = 0.2f;                 // Approximate time for the camera to refocus.
     public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
@@ -79,11 +79,9 @@ public class CameraControl : MonoBehaviour
     {
         // Find the position the camera rig is moving towards in its local space.
         Vector3 desiredLocalPos = transform.InverseTransformPoint(m_DesiredPosition);
-
-        // Start the camera's size calculation at zero.
+       //////////
         float size = 0f;
 
-        // Go through all the targets...
         for (int i = 0; i < m_Targets.Length; i++)
         {
             // ... and if they aren't active continue on to the next target.
@@ -113,13 +111,13 @@ public class CameraControl : MonoBehaviour
 
     public void SetStartPositionAndSize ()
     {
-        // Find the desired position.
+
         FindAveragePosition ();
 
-        // Set the camera's position to the desired position without damping.
+
         transform.position = m_DesiredPosition;
 
-        // Find and set the required size of the camera.
+
         m_Camera.orthographicSize = FindRequiredSize ();
     }
 }
