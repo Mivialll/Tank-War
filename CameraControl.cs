@@ -54,20 +54,19 @@ public class CameraControl: MonoBehaviour
             numTargets++;
         }
 
+
         if (numTargets > 0)
             averagePos /= numTargets;
 
-        // Keep the same y value.
         averagePos.y = transform.position.y;
 
-        // The desired position is the average position;
         m_DesiredPosition = averagePos;
     }
 
 
     private void Zoom ()
     {
-        // Find the required size based on the desired position and smoothly transition to that size.
+
         float requiredSize = FindRequiredSize();
         m_Camera.orthographicSize = Mathf.SmoothDamp (m_Camera.orthographicSize, requiredSize, ref m_ZoomSpeed, m_DampTime);
     }
@@ -112,9 +111,7 @@ public class CameraControl: MonoBehaviour
 
         FindAveragePosition ();
 
-
         transform.position = m_DesiredPosition;
-
 
         m_Camera.orthographicSize = FindRequiredSize ();
     }
