@@ -8,10 +8,10 @@ public class CameraControl: MonoBehaviour
     public float m_MinSize = 6.5f;                 
     [HideInInspector] public Transform[] m_Targets; 
 
-    private Camera m_Camera;                        // Used for referencing the camera.
-    private float m_ZoomSpeed;                      // Reference speed for the smooth damping of the orthographic size.
-    private Vector3 m_MoveVelocity;                 // Reference velocity for the smooth damping of the position.
-    private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
+    private Camera m_Camera;                        
+    private float m_ZoomSpeed;                   
+    private Vector3 m_MoveVelocity;                
+    private Vector3 m_DesiredPosition;           
 
 
     private void Awake (){
