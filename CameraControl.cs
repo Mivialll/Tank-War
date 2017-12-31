@@ -18,11 +18,8 @@ public class CameraControl: MonoBehavior
         m_Camera = GetComponentInChildren<Camera> ();
     }
 
-
     private void FixedUpdate (){
-  
         Move ();
-
         Zoom ();
     }
 
